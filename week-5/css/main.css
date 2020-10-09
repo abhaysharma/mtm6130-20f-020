@@ -44,11 +44,13 @@ nav ul a {
 }
 
 /* Selecting element with id value */
+/* 0100 */
 #tow {
   background-color: orange;
 }
 
 /* Adding multiple classes to an element */
+/* 0010 */
 .large-text {
   font-size: 20px;
 }
