@@ -6,11 +6,14 @@
 *:after{
   box-sizing: inherit;
 } */
-/* html {
+/*
+html {
   border: 1px solid red;
 }
 
+// selecting every HTML element on the page
 * {
+  // inheriting the border value from the parent
   border: inherit;
 }
 
@@ -18,10 +21,12 @@ nav {
   border: 1px solid blue;
 }
 
+// inside the h1 tag and before the content of the h1
 h1:before {
   content: "\00BB";
 }
 
+// inside the h1 tag and after the content of the h1
 h1:after {
   content: "\00AB";
 } */
@@ -31,6 +36,8 @@ body {
   color: darkslategrey;
   background-image: url("../images/white_brick_wall.png");
   /* padding: 90px 0 0 0; */
+
+  /* EX 5 - fixing the overlapping heading */
   padding-top: 90px;
 }
 
@@ -61,35 +68,48 @@ nav ul {
   list-style: none;
 }
 
+/* EX 1 - Display and Box-Sizing */
 nav ul li {
+  /* EX 1 -when we add display: inline-block the elements show next to each other */
   display: inline-block;
+  /* EX 1 -Adding a width will work as the display is set to inline block */
   width: 49%;
+  /* EX 1 -now adding padding will increase the total width */
   padding: 1em;
+  /* EX 1 -We can add box-sizing to calculate the width including the padding */
   box-sizing: border-box;
+  /*  adding separator border between list items */
   border-right: 1px solid white;
 }
 
+/* removing the border separator from the last list item */
 nav ul li:last-child {
   border: none;
 }
 
 /* Selecting child elements multiple level */
 nav ul a {
+  /* EX 1 -when we add display: block the anchor tags take full width of their parent */
   display: block;
   color: darkslategrey;
   text-decoration: none;
 }
 
 /* Selecting HTML element with class name */
+/* EX 2 - display inline-block */
 .orange-link {
-  width: 300px;
+  /* EX 2 -adding padding overlaps the links  */
   padding: 1.5em;
+  /* EX 2 -width will have no effect without display inline-block or block */
+  width: 300px;
+  /* EX 2 -Adding inline-block fixes the padding issue */
   display: block;
   background: darkslategrey;
   color: orange;
   text-decoration: none;
 }
 
+/* EX 3 - Float */
 article,
 aside {
   background-color: rgba(255, 255, 255, 0.6);
@@ -100,6 +120,7 @@ aside {
   float: left;
 }
 
+/* EX 3 -fixing the side effect of float */
 aside {
   width: 20%;
 }
@@ -108,15 +129,18 @@ section {
   clear: both;
 }
 
+/* making the images take 100% width of the parent element */
 img {
   width: 100%;
 }
 
+/* stop the container at a max width and center on the page */
 .container {
   max-width: 1024px;
   margin: 0 auto;
 }
 
+/* EX 4 - Position */
 /* Position Absolute */
 .orange-link.large-text {
   position: absolute;
@@ -125,8 +149,12 @@ img {
 }
 
 /* Selecting element with id value */
-/* 0100 */
+/* Specificity: 0100 */
+
 #tow {
+  /* EX 4 -Absolute positioning based on relative element */
+  /* adding position for keeping the child element in the container */
+
   position: relative;
   background: orange url("../images/bread.jpg") no-repeat center center;
   background-size: cover;
@@ -178,6 +206,8 @@ h3+ul {
   font-weight: bold;
 }
 
+/* EX 5 - navigation fixed */
+
 /* navigation - fixed */
 nav {
   position: fixed;
@@ -185,6 +215,8 @@ nav {
   left: 0;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.8);
+  /* EX 5 -to fix the stacking order we area adding z-index */
+  /* EX 5 -even though 1 will do we use 999 to be safe */
   z-index: 999;
 }
 
